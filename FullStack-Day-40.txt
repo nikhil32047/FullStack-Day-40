@@ -1,0 +1,83 @@
+Day 40:
+===========
+
+a) Public Access Modifier
+
+Public members are accessible from anywhere (inside or outside the class).
+By default, all variables and methods in Python are public.
+
+Example:
+
+class Demo:
+    def __init__(self):
+        self.name = "Nikhil"   # public variable
+
+    def show(self):
+        print(self.name)
+
+d = Demo()
+d.show()
+print(d.name)
+
+
+Key Points:
+
+No underscore prefix
+
+Freely accessible
+
+Least restrictive
+
+b) Protected Access Modifier
+
+Protected members are meant to be accessed within the class and its subclasses.
+Defined using a single underscore (_) prefix.
+
+Example:
+
+class Parent:
+    def __init__(self):
+        self._salary = 50000   # protected variable
+
+class Child(Parent):
+    def show(self):
+        print(self._salary)
+
+c = Child()
+c.show()
+
+
+Key Points:
+
+Convention-based protection
+
+Accessible in subclasses
+
+Not strictly enforced
+
+c) Private Access Modifier
+
+Private members are restricted to the class only.
+Defined using double underscore (__), which enables name mangling.
+
+Example:
+
+class Bank:
+    def __init__(self):
+        self.__balance = 10000
+
+    def show(self):
+        print(self.__balance)
+
+b = Bank()
+b.show()
+# b.__balance → Error
+
+
+Key Points:
+
+Stronger data hiding
+
+Accessed internally only
+
+Prevents accidental modification
